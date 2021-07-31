@@ -1,0 +1,7 @@
+﻿Install-Package Microsoft.EntityFrameworkCore.sqlserver
+
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Add-Migration InitialCreate
+Update-Database
+
+https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=visual-studio
