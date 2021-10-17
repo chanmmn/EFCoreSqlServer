@@ -1,0 +1,12 @@
+C:\test\EntityFramework\SampleEF\SampleEF\bin\Debug\SampleEF.exe.config
+C:\test\EntityFramework\SampleEF\SampleEF\bin\Debug\SampleEF.exe
+C:\test\EntityFramework\SampleEF\SampleEF\bin\Debug\SampleEF.pdb
+C:\test\EntityFramework\SampleEF\SampleEF\bin\Debug\EntityFramework.dll
+C:\test\EntityFramework\SampleEF\SampleEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\test\EntityFramework\SampleEF\SampleEF\bin\Debug\EntityFramework.xml
+C:\test\EntityFramework\SampleEF\SampleEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\test\EntityFramework\SampleEF\SampleEF\obj\Debug\SampleEF.csproj.AssemblyReference.cache
+C:\test\EntityFramework\SampleEF\SampleEF\obj\Debug\SampleEF.csproj.SuggestedBindingRedirects.cache
+C:\test\EntityFramework\SampleEF\SampleEF\obj\Debug\SampleEF.csproj.CoreCompileInputs.cache
+C:\test\EntityFramework\SampleEF\SampleEF\obj\Debug\SampleEF.exe
+C:\test\EntityFramework\SampleEF\SampleEF\obj\Debug\SampleEF.pdb
