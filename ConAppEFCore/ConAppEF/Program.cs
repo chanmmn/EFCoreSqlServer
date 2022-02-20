@@ -19,6 +19,7 @@ namespace EFGetStarted
 
                     db.SaveChanges();
                     transaction.Commit();
+                    //db.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Blogger OFF;"); // not working
                 }
                 // Read
                 Console.WriteLine("Querying for a blog");
@@ -37,16 +38,20 @@ namespace EFGetStarted
                 //        Content = "I wrote an app using EF Core!",
                 //        BlogId = 1
                 //    }); ;
-                db.Add(new BlogPost
+                using (var transaction = db.Database.BeginTransaction())
                 {
-                    PostId = 1,
-                    Title = "Hello World",
-                    Content = "I wrote an app using EF Core!",
-                    BlogId = 1
-                }
+                    db.Add(new BlogPost
+                    {
+                        //PostId = 1,
+                        Title = "Hello World",
+                        Content = "I wrote an app using EF Core!",
+                        BlogId = 1
+                    }
                     );
-                db.SaveChanges();
-
+                    //db.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.BlogPost OFF;"); // not working
+                    db.SaveChanges();
+                    transaction.Commit();
+                }
                 // Delete
                 Console.WriteLine("Delete the blog");
                 db.Remove(blog);
