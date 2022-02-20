@@ -2,14 +2,20 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 
 namespace EFGetStarted
 {
     public class BlogContext : DbContext
     {
+        static IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", false, true);
+        public static IConfigurationRoot configuration = builder.Build();
+
         public DbSet<Blogger> Bloggers { get; set; }
         public DbSet<BlogPost> BlogPost { get; set; }
-        public string conn = "data source=.;initial catalog=blog;integrated security=True";
+        //public string conn = "data source=.;initial catalog=blog;integrated security=True";
+        public string conn = configuration.GetConnectionString("DBConnection");
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             //=> options.UseSqlite("Data Source=blogging.db");
             => options.UseSqlServer(conn);
